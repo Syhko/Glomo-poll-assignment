@@ -13,6 +13,7 @@ const OngoingEvents = ({ onGoingEvents }) => {
             key={event.id}
             playerOne={event.homeName}
             playerTwo={event.awayName}
+            group={event.group}
             id={event.id}
           />
         ))}

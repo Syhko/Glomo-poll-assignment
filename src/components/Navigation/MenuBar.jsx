@@ -5,7 +5,7 @@ const MenuBar = () => {
   return (
     <div className="menu-bar-wrapper">
       <p>
-        Poll <span>App</span>
+        Glomo poll <span>App</span>
       </p>
     </div>
   );

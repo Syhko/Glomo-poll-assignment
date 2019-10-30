@@ -1,17 +1,42 @@
 .display-ticket-wrapper {
+  position: relative;
   width: 90%;
   height: 4em;
-  background-color: #c4c4c4;
-  margin: 10px auto;
+  background-color: #e3e3e3;
+  margin: 40px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   animation: appear 200ms ease-in;
 }
 
-.display-ticket-wrapper p {
-  font-size: 20px;
-  text-align: center;
+.bet-component-wrapper {
+  width: 90%;
+  height: 5em;
+  background-color: #e3e3e3;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  animation: appear 200ms ease-in;
+  position: relative;
+}
+
+.group-label {
+  position: absolute;
+  height: 30px;
+  background-color: #30170f;
+  color: #fff;
+  border: 2px solid #e3e3e3;
+  border-radius: 5px 5px 0px 0px;
+  top: -32px;
+  right: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.group-label p {
+  padding-top: 5px;
 }
 
 @keyframes appear {
@@ -21,4 +46,43 @@
   to {
     opacity: 1;
   }
+}
+
+.bet-player {
+  font-size: 20px;
+  font-weight: 500;
+  width: 30%;
+  text-align: center;
+  user-select: none;
+  animation: appear 200ms ease-in;
+}
+
+.bet-player-selected {
+  font-size: 20px;
+  text-shadow: 2px 2px 6px #ea4c4c;
+  font-weight: 500;
+  width: 30%;
+  text-align: center;
+  user-select: none;
+  animation: appear 200ms ease-in;
+}
+
+.versus {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 800;
+  user-select: none;
+  animation: appear 200ms ease-in;
+}
+
+.bet {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 800;
+  cursor: pointer;
+  animation: appear 200ms ease-in;
+}
+
+.bet:hover {
+  text-shadow: 2px 2px 8px #ea4c4c;
 }

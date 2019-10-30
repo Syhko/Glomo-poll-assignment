@@ -11,9 +11,17 @@ const Filter = ({
   const [isSportOpen, setIsSportOpen] = React.useState(false);
   const [sportSelected, setSportSelected] = React.useState(defaultSport);
   const [isCountryOpen, setIsCountryOpen] = React.useState(false);
-  const [countrySelected, setCountrySelected] = React.useState("Choose...");
+  const [countrySelected, setCountrySelected] = React.useState("Choose");
+  const countries = [
+    ...new Set(
+      allEvents
+        .filter(event => event.sport === sportSelected)
+        .map(event => event.country)
+    )
+  ];
   const selectSport = sport => {
     setSportSelected(sport);
+    setCountrySelected("Choose");
     setIsSportOpen(false);
     handleSport(sport);
   };
@@ -22,19 +30,12 @@ const Filter = ({
     setIsCountryOpen(false);
     handleCountry(sportSelected, country);
   };
-  const countries = [
-    ...new Set(
-      allEvents
-        .filter(event => event.sport === sportSelected)
-        .map(event => event.country)
-    )
-  ];
-  console.log(countries);
+
   return (
     <div className="filter-wrapper">
       <div className="sport-filter">
         <h1 onClick={() => setIsSportOpen(!isSportOpen)}>
-          Sport {sportSelected}
+          <span>Sport</span> {sportSelected}
           {!isSportOpen && <span> &#9660;</span>}
           {isSportOpen && <span> &#9650;</span>}
         </h1>
@@ -48,7 +49,7 @@ const Filter = ({
       </div>
       <div className="sport-filter">
         <h1 onClick={() => setIsCountryOpen(!isCountryOpen)}>
-          Country {countrySelected}
+          <span>Country</span> {countrySelected}
           {!isCountryOpen && <span> &#9660;</span>}
           {isCountryOpen && <span> &#9650;</span>}
         </h1>

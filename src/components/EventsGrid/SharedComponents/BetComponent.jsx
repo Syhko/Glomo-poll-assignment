@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-const OngoingEvents = ({ playerOne, playerTwo, id }) => {
+const OngoingEvents = ({ playerOne, playerTwo, id, group }) => {
   const [isBetting, setIsBetting] = React.useState(false);
   const [betSelected, setBetSelected] = React.useState(
     localStorage.getItem(id) === undefined ? "" : localStorage.getItem(id)
@@ -18,6 +18,9 @@ const OngoingEvents = ({ playerOne, playerTwo, id }) => {
       onMouseEnter={() => setIsBetting(true)}
       onMouseLeave={() => setIsBetting(false)}
     >
+      <div className="group-label">
+        <p>{group}</p>
+      </div>
       {!isBetting && (
         <>
           <p

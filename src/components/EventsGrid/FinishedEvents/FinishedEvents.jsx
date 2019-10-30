@@ -13,6 +13,7 @@ const FinishedEvents = ({ finishedEvents }) => {
             id={event.id}
             playerOne={event.homeName}
             playerTwo={event.awayName}
+            group={event.group}
           />
         ))}
     </div>
