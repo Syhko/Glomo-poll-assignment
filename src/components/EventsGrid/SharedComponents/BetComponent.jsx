@@ -3,10 +3,11 @@ import "./style.scss";
 
 const OngoingEvents = ({ playerOne, playerTwo, id, group }) => {
   const [isBetting, setIsBetting] = React.useState(false);
+  // getting the data from local storage to populate the component
   const [betSelected, setBetSelected] = React.useState(
     localStorage.getItem(id) === undefined ? "" : localStorage.getItem(id)
   );
-
+  // the bet saving system with local storage
   const betFunction = decision => {
     setBetSelected(decision);
     localStorage.setItem(id, decision);

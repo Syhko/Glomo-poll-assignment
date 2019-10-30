@@ -7,12 +7,13 @@ import IncomingEvents from "./IncomingEvents/IncomingEvents";
 import events from "../../data/test-assignment.json";
 
 const EventsContainer = ({}) => {
+  // creating an array of unique entries for all the different sports
   const allSports = [...new Set(events.events.map(event => event.sport))];
-  const allCountries = [...new Set(events.events.map(event => event.country))];
+  // select a random value in the array above to initiate the first render
   const [defaultSport, setDefaultSport] = React.useState(
     allSports[Math.floor(Math.random() * allSports.length)]
   );
-
+  // Setting the 3 panels with data from the random value
   const [onGoing, setOnGoing] = React.useState(
     events.events
       .filter(event => event.state === "STARTED")
@@ -28,7 +29,7 @@ const EventsContainer = ({}) => {
       .filter(event => event.state === "NOT_STARTED")
       .filter(event => event.sport === defaultSport)
   );
-
+  // updating the 3 panels with the new sport selected
   const filteredSport = sport => {
     setOnGoing(
       events.events
@@ -46,7 +47,7 @@ const EventsContainer = ({}) => {
         .filter(event => event.sport === sport)
     );
   };
-
+  // updating the 3 panel with the country picked and the sport selected
   const filteredCountry = (sport, country) => {
     setOnGoing(
       events.events
