@@ -1,0 +1,58 @@
+.filter-wrapper {
+  background-color: #30170f;
+  grid-area: filter;
+  display: flex;
+}
+
+.filter-wrapper h1 {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 600;
+  color: #fff;
+  margin: auto;
+  user-select: none;
+  cursor: pointer;
+}
+
+.filter-wrapper span {
+  font-style: normal;
+}
+
+.filter-wrapper p {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 600;
+  color: #fff;
+  margin: auto;
+  padding: 1em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-wrapper p:hover {
+  text-shadow: 0px 0px 5px #fff;
+}
+
+.sport-filter {
+  position: relative;
+  width: 30%;
+  display: flex;
+}
+
+.dropdown {
+  background-color: #000;
+  position: absolute;
+  top: 90%;
+  left: 30%;
+  z-index: 999;
+  animation: slideDown 500ms cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+@keyframes slideDown {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}

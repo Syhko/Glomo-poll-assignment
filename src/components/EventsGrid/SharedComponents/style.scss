@@ -1,0 +1,14 @@
+.display-ticket-wrapper {
+  width: 90%;
+  height: 4em;
+  background-color: #c4c4c4;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.display-ticket-wrapper p {
+  font-size: 20px;
+  text-align: center;
+}

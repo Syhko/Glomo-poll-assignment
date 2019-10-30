@@ -1,0 +1,40 @@
+.ongoing-events-wrapper {
+  background-color: #30170f;
+  grid-area: ongoing;
+  overflow: auto;
+}
+
+.ongoing-events-wrapper h1 {
+  margin: 0;
+  color: #ea4c4c;
+  font-style: italic;
+  padding: 0.5em;
+  position: sticky;
+  top: 0px;
+  background-color: #30170f;
+}
+
+.ongoing-events-wrapper p {
+  margin: auto;
+}
+
+.bet-component-wrapper {
+  width: 90%;
+  height: 10em;
+  background-color: #c4c4c4;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bet-player {
+  font-size: 24px;
+  width: 30%;
+}
+
+.versus {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 600;
+}

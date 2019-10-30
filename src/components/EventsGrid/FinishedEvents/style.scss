@@ -1,0 +1,15 @@
+.finished-events-wrapper {
+  grid-area: finished;
+  background-color: #30170f;
+  overflow: auto;
+}
+
+.finished-events-wrapper h1 {
+  margin: 0;
+  color: #ea4c4c;
+  font-style: italic;
+  padding: 0.5em;
+  position: sticky;
+  top: 0px;
+  background-color: #30170f;
+}
