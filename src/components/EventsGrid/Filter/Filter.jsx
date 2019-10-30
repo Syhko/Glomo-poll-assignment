@@ -11,7 +11,7 @@ const Filter = ({
   const [isSportOpen, setIsSportOpen] = React.useState(false);
   const [sportSelected, setSportSelected] = React.useState(defaultSport);
   const [isCountryOpen, setIsCountryOpen] = React.useState(false);
-  const [countrySelected, setCountrySelected] = React.useState("Choose");
+  const [countrySelected, setCountrySelected] = React.useState("All");
 
   // creating an array with unique entries of all the countries for a selected sport
   const countries = [
@@ -24,7 +24,7 @@ const Filter = ({
 
   const selectSport = sport => {
     setSportSelected(sport);
-    setCountrySelected("Choose");
+    setCountrySelected("All");
     setIsSportOpen(false);
     handleSport(sport);
   };
