@@ -6,7 +6,7 @@ import OngoingEvents from "./OngoingEvents/OngoingEvents";
 import IncomingEvents from "./IncomingEvents/IncomingEvents";
 import events from "../../data/test-assignment.json";
 
-const EventsContainer = ({}) => {
+const EventsContainer = () => {
   // creating an array of unique entries for all the different sports
   const allSports = [...new Set(events.events.map(event => event.sport))];
   // select a random value in the array above to initiate the first render
