@@ -2,6 +2,7 @@
   grid-area: finished;
   background-color: #30170f;
   overflow: auto;
+  box-shadow: 0px 0px 5px black;
 }
 
 .finished-events-wrapper h1 {
@@ -12,4 +13,8 @@
   position: sticky;
   top: 0px;
   background-color: #30170f;
+}
+
+.finished-events-wrapper p {
+  margin: auto;
 }

@@ -2,6 +2,7 @@
   background-color: #30170f;
   grid-area: incoming;
   overflow: auto;
+  box-shadow: 0px 0px 5px black;
 }
 
 .incoming-events-wrapper h1 {
@@ -12,4 +13,8 @@
   position: sticky;
   top: 0px;
   background-color: #30170f;
+}
+
+.incoming-events-wrapper p {
+  margin: auto;
 }

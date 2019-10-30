@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import DisplayTicket from "../SharedComponents/DisplayTicket";
+import FinishedTicket from "../SharedComponents/FinishedTicket";
 
 const FinishedEvents = ({ finishedEvents }) => {
   return (
@@ -8,7 +8,9 @@ const FinishedEvents = ({ finishedEvents }) => {
       <h1>Finished</h1>
       {finishedEvents.length !== 0 &&
         finishedEvents.map(event => (
-          <DisplayTicket
+          <FinishedTicket
+            key={event.id}
+            id={event.id}
             playerOne={event.homeName}
             playerTwo={event.awayName}
           />
