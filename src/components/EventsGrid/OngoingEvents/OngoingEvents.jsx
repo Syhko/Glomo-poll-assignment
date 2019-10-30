@@ -3,7 +3,6 @@ import BetComponent from "../SharedComponents/BetComponent";
 import "./style.scss";
 
 const OngoingEvents = ({ onGoingEvents }) => {
-  const countries = [...new Set(onGoingEvents.map(event => event.country))];
   return (
     <div className="ongoing-events-wrapper">
       <h1>Ongoing Events</h1>
@@ -18,6 +17,7 @@ const OngoingEvents = ({ onGoingEvents }) => {
           />
         ))}
       </div>
+      {onGoingEvents.length === 0 && <h2>No events playing right now</h2>}
     </div>
   );
 };

@@ -14,6 +14,14 @@
   top: 0px;
   z-index: 10;
   background-color: #30170f;
+  box-shadow: 0px 0px 5px black;
+}
+
+.ongoing-events-wrapper h2 {
+  color: #ea4c4c;
+  font-style: italic;
+  padding: 2.5em;
+  background-color: #30170f;
 }
 
 .ongoing-events-wrapper p {

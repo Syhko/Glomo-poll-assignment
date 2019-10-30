@@ -16,6 +16,7 @@ const FinishedEvents = ({ finishedEvents }) => {
             group={event.group}
           />
         ))}
+      {finishedEvents.length === 0 && <h2>No events finished yet</h2>}
     </div>
   );
 };

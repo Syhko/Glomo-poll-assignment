@@ -34,7 +34,10 @@ const Filter = ({
   return (
     <div className="filter-wrapper">
       <div className="sport-filter">
-        <h1 onClick={() => setIsSportOpen(!isSportOpen)}>
+        <h1
+          className="sport-dropdown"
+          onClick={() => setIsSportOpen(!isSportOpen)}
+        >
           <span>Sport</span> {sportSelected}
           {!isSportOpen && <span> &#9660;</span>}
           {isSportOpen && <span> &#9650;</span>}
@@ -48,7 +51,10 @@ const Filter = ({
         )}
       </div>
       <div className="sport-filter">
-        <h1 onClick={() => setIsCountryOpen(!isCountryOpen)}>
+        <h1
+          className="country-dropdown"
+          onClick={() => setIsCountryOpen(!isCountryOpen)}
+        >
           <span>Country</span> {countrySelected}
           {!isCountryOpen && <span> &#9660;</span>}
           {isCountryOpen && <span> &#9650;</span>}

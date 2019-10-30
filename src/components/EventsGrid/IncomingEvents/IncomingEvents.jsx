@@ -18,6 +18,7 @@ const IncomingEvents = ({ incomingEvents }) => {
             />
           ))}
       </div>
+      {incomingEvents.length === 0 && <h2>No events scheduled for later</h2>}
     </div>
   );
 };

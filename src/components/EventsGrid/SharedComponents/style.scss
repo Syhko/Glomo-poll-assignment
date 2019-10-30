@@ -49,22 +49,32 @@
 }
 
 .bet-player {
-  font-size: 20px;
   font-weight: 500;
   width: 30%;
   text-align: center;
   user-select: none;
   animation: appear 200ms ease-in;
+  @media screen and (max-width: 800px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 20px;
+  }
 }
 
 .bet-player-selected {
-  font-size: 20px;
   text-shadow: 2px 2px 6px #ea4c4c;
   font-weight: 500;
   width: 30%;
   text-align: center;
   user-select: none;
   animation: appear 200ms ease-in;
+  @media screen and (max-width: 800px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 20px;
+  }
 }
 
 .versus {
