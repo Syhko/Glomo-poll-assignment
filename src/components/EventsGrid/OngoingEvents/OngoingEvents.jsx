@@ -5,7 +5,7 @@ import "./style.scss";
 const OngoingEvents = ({ onGoingEvents }) => {
   return (
     <div className="ongoing-events-wrapper">
-      <h1>Ongoing Events</h1>
+      <h1>Current event</h1>
       <div>
         {onGoingEvents.map(event => (
           <BetComponent

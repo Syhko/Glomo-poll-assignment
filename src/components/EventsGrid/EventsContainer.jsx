@@ -1,10 +1,7 @@
 import React from "react";
 import "./style.scss";
-import Filter from "./Filter/Filter";
-import FinishedEvents from "./FinishedEvents/FinishedEvents";
-import OngoingEvents from "./OngoingEvents/OngoingEvents";
-import IncomingEvents from "./IncomingEvents/IncomingEvents";
 import events from "../../data/test-assignment.json";
+import BetComponent from "../../components/EventsGrid/SharedComponents/BetComponent";
 
 const EventsContainer = () => {
   // creating an array of unique entries for all the different sports
@@ -13,20 +10,19 @@ const EventsContainer = () => {
   const [defaultSport, setDefaultSport] = React.useState(
     allSports[Math.floor(Math.random() * allSports.length)]
   );
+  const [randomEvent, setRandomEvent] = React.useState(
+    events.events[Math.floor(Math.random() * events.events.length)]
+  );
+
+  const changeEvent = () => {
+    setRandomEvent(
+      events.events[Math.floor(Math.random() * events.events.length)]
+    );
+  };
   // Setting the 3 panels with data from the random value
   const [onGoing, setOnGoing] = React.useState(
     events.events
       .filter(event => event.state === "STARTED")
-      .filter(event => event.sport === defaultSport)
-  );
-  const [finished, setFinished] = React.useState(
-    events.events
-      .filter(event => event.state === "FINISHED")
-      .filter(event => event.sport === defaultSport)
-  );
-  const [incoming, setIncoming] = React.useState(
-    events.events
-      .filter(event => event.state === "NOT_STARTED")
       .filter(event => event.sport === defaultSport)
   );
   // updating the 3 panels with the new sport selected
@@ -34,16 +30,6 @@ const EventsContainer = () => {
     setOnGoing(
       events.events
         .filter(event => event.state === "STARTED")
-        .filter(event => event.sport === sport)
-    );
-    setFinished(
-      events.events
-        .filter(event => event.state === "FINISHED")
-        .filter(event => event.sport === sport)
-    );
-    setIncoming(
-      events.events
-        .filter(event => event.state === "NOT_STARTED")
         .filter(event => event.sport === sport)
     );
   };
@@ -55,32 +41,26 @@ const EventsContainer = () => {
         .filter(event => event.sport === sport)
         .filter(event => event.country === country)
     );
-    setFinished(
-      events.events
-        .filter(event => event.state === "FINISHED")
-        .filter(event => event.sport === sport)
-        .filter(event => event.country === country)
-    );
-    setIncoming(
-      events.events
-        .filter(event => event.state === "NOT_STARTED")
-        .filter(event => event.sport === sport)
-        .filter(event => event.country === country)
-    );
   };
-
   return (
     <div className="events-container">
-      <Filter
-        allSports={allSports}
-        allEvents={events.events}
-        defaultSport={defaultSport}
-        handleSport={sport => filteredSport(sport)}
-        handleCountry={(sport, country) => filteredCountry(sport, country)}
-      />
-      <OngoingEvents onGoingEvents={onGoing} />
-      <FinishedEvents finishedEvents={finished} />
-      <IncomingEvents incomingEvents={incoming} />
+      <div className="ongoing-events-wrapper">
+        <h1>
+          Bet on a random <span>{randomEvent.sport}</span> match in
+          <span> {randomEvent.country}</span>
+        </h1>
+        <div className="bet-wrapper">
+          <BetComponent
+            key={randomEvent.id}
+            playerOne={randomEvent.homeName}
+            playerTwo={randomEvent.awayName}
+            group={randomEvent.group}
+            id={randomEvent.id}
+            changeEvent={changeEvent}
+            status={randomEvent.state}
+          />
+        </div>
+      </div>
     </div>
   );
 };

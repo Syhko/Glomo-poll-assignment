@@ -3,25 +3,45 @@
   height: 85vh;
   background-color: #fff;
   margin: auto;
-  display: grid;
+  display: flex;
+}
 
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  @media screen and (max-width: 800px) {
-    grid-template-columns: 100%;
-    grid-template-rows: 10vh 80vh 50vh 50vh;
-    grid-template-areas:
-      "filter"
-      "ongoing"
-      "incoming"
-      "finished";
-  }
-  @media screen and (min-width: 800px) {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 45% 45%;
-    grid-template-areas:
-      "filter filter"
-      "ongoing incoming"
-      "ongoing finished";
-  }
+.ongoing-events-wrapper {
+  background-color: #30170f;
+  box-shadow: 0px 0px 5px black;
+  width: 100%;
+}
+
+.ongoing-events-wrapper span {
+  color: #fff;
+}
+
+.ongoing-events-wrapper h1 {
+  margin: 0;
+  color: #ea4c4c;
+  font-style: italic;
+  padding: 0.5em;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  background-color: #30170f;
+  box-shadow: 0px 0px 5px black;
+}
+
+.ongoing-events-wrapper h2 {
+  color: #ea4c4c;
+  font-style: italic;
+  padding: 2.5em;
+  background-color: #30170f;
+}
+
+.ongoing-events-wrapper p {
+  margin: auto;
+}
+
+.bet-wrapper {
+  margin: auto;
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }

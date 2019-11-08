@@ -1,7 +1,14 @@
 import React from "react";
 import "./style.scss";
 
-const OngoingEvents = ({ playerOne, playerTwo, id, group }) => {
+const OngoingEvents = ({
+  playerOne,
+  playerTwo,
+  id,
+  group,
+  changeEvent,
+  status
+}) => {
   const [isBetting, setIsBetting] = React.useState(false);
   // getting the data from local storage to populate the component
   const [betSelected, setBetSelected] = React.useState(
@@ -11,6 +18,7 @@ const OngoingEvents = ({ playerOne, playerTwo, id, group }) => {
   const betFunction = decision => {
     setBetSelected(decision);
     localStorage.setItem(id, decision);
+    changeEvent();
   };
 
   return (
@@ -21,6 +29,9 @@ const OngoingEvents = ({ playerOne, playerTwo, id, group }) => {
     >
       <div className="group-label">
         <p>{group}</p>
+      </div>
+      <div className="status-label">
+        <p>{status}</p>
       </div>
       {!isBetting && (
         <>
@@ -43,7 +54,7 @@ const OngoingEvents = ({ playerOne, playerTwo, id, group }) => {
           </p>
         </>
       )}
-      {isBetting && (
+      {isBetting && status !== "FINISHED" && (
         <>
           <p className="bet" onClick={() => betFunction("Home")}>
             Home
@@ -53,6 +64,13 @@ const OngoingEvents = ({ playerOne, playerTwo, id, group }) => {
           </p>
           <p className="bet" onClick={() => betFunction("Away")}>
             Away
+          </p>
+        </>
+      )}
+      {isBetting && status === "FINISHED" && (
+        <>
+          <p className="bet" onClick={() => changeEvent()}>
+            Match is closed
           </p>
         </>
       )}
